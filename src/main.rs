@@ -38,6 +38,7 @@ fn handle_connection(mut stream: TcpStream) {
         _ => "Sorry, not permited \r\n"
     };
 
+    println!("sending to client: {}", response);
     //将响应写入缓冲区
     stream.write(response.as_bytes()).unwrap();
     //flush，发送给客户端
